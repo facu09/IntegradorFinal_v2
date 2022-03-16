@@ -7,7 +7,7 @@ import '../../fontawesome/fontawesome-free-5.15.3-web/css/all.css'; //para poder
 import logoKiwi from '../../Imagenes/LogoKiwi.jpg';
 
 import { useState } from 'react';
-import { Link, Outlet, useNavigate } from 'react-router-dom'
+import { Link, Outlet, useNavigate } from 'react-router-dom';
 
 import { MdClose } from "react-icons/md";
 import { FiMenu } from "react-icons/fi";
