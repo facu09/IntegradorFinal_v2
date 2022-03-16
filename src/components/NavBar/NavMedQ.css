@@ -2,7 +2,7 @@
 /***      MEDIA QUERIES        ***/
 
 /* para Navegadores PC pantallas pequeñas o restauradas */
-@media (min-width: 769px) and (max-width: 1224px) {
+@media (min-width: 1024px) {
     .encabezado{
         height: 70px; 
     }
@@ -32,7 +32,7 @@
 }
 
 /* para Tablets Ipads  van de 455 a 768px*/
-@media (min-width: 455px) and (max-width:768px) {
+@media (min-width: 455px) and (max-width:1024px) {
     .encabezado{
         height:42px;
     }
@@ -45,7 +45,9 @@
     }
     .ImagenLogo{
         width: 42px; 
-   }
+        margin-left:50%
+    }
+
    .ARefLogo{
     width: 70px; 
     /*2021-06-21: pruebo de meter el logo mas adentrol*/
@@ -53,7 +55,7 @@
     margin-left:  20%;
    }
    .LiQuienesSomos::after {
-    content:".Somos";
+    content:"ist.";
     }
     .LiProdcutos::after {
         content:"."
@@ -73,6 +75,11 @@
         height: 1.98rem;
         font-size: 0.8rem;
         padding: 1px 2px 1px 2px; 
+    }
+
+    .SB__sideBar_button {
+        width: 31px; 
+        height: 31px
     }
 }
 
@@ -97,7 +104,12 @@
     /*margin-left: 10%;*/
     margin-left:  10%;
    }
-    .ElementoNav {
+   /*Intento de hacer un Menu Hamburgesa trucho, va no se*/
+   /* .NavBar {
+       height: 0;
+       width: 0;
+   } */
+   .ElementoNav {
         font-size: 0.75rem;
     }    
      /* si uso el metodo de Franco no hace falta esto */
@@ -111,7 +123,7 @@
         padding: 1px 2px 1px 2px; 
     }
     .LiQuienesSomos::after {
-        content:".S.";
+        content:".";
     }
     .LiProdcutos::after {
         content:"."

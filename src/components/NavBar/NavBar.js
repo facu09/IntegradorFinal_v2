@@ -1,3 +1,5 @@
+import SideBar from "../SideBar/SideBar";
+
 import './NavBar.css';  // vinculo estilos
 import './NavMedQ.css'  // estilos en cascadas propios
 import '../../fontawesome/fontawesome-free-5.15.3-web/css/all.css'; //para poder usar estilos de Fontawesome
@@ -7,6 +9,10 @@ import logoKiwi from '../../Imagenes/LogoKiwi.jpg';
 import { useState } from 'react';
 import { Link, Outlet, useNavigate } from 'react-router-dom'
 
+import { MdClose } from "react-icons/md";
+import { FiMenu } from "react-icons/fi";
+
+import  ('../../_base.css'); 
 
 
 // ME LO LLEVO PARA LA HOME :)
@@ -58,6 +64,8 @@ const NavBar = () => {
     const [btnLogInOut, setBtnLogInOut] = useState(lsLblBotonLogInOut);
         //** recordar que por cada uno de estas actulizacines de estado si cambio arranca de arriba, updatea el componente
         //**            y arranca otra vez desde NavBar = () => { */
+    //Defino Estado de la SideBar Open/Close
+    const [navbarOpen, setNavbarOpen] = useState(false)
   
     //Aprendizaje: para usar este navigate: este componente NavBar.js tiene que estar dentro del  <BrowserRouter>
     const navigate = useNavigate() //definicion para poder usar navigate
@@ -67,6 +75,8 @@ const NavBar = () => {
     const onClickLblUsuario = () => {
         // alert ("NavBar: A- Entro en el onClick del Lbl de Usuario: como uso el Navigate --> No recarga la pagina, sino el window.location.replace --> recarga la pagina.");
         
+        setNavbarOpen(false) //para que cierre el SideBar en caso de que este abierto
+
         if (lsLblUsMostrar !== "( - )" ) {
             // window.location.replace("/User");  //deberia usar el navigate para que no recargue la pagina en el navegador
             navigate('/user');  
@@ -80,7 +90,9 @@ const NavBar = () => {
     const onClickLoginLogout = () => {
         //  alert("NavBar: B- Entro al onClickLoginLogout y el usMostrar es: '" + lsLblUsMostrar + "'");
          console.log("NavBar: B- Entro al onClickLoginLogout y el usMostrar es: '" + lsLblUsMostrar + "'");
-         
+
+        setNavbarOpen(false) //para que cierre el SideBar en caso de que este abierto
+
          if (lsLblBotonLogInOut === 'Login') {
         // if (btnLogInOut === 'Login') {
             //  alert ("Entro al Login ehhhh PERO COMO AHORA USO el 'navigate('/login') --> NO RECARGA LA PAGINA. En cambio ' EL Window.location.replace --> recarga lapagina --> mirá arriba...!!!")
@@ -128,6 +140,9 @@ const NavBar = () => {
 
     const onClickComprar = () => { 
         // alert ("Esta queriendo ir a la seccion Comprar (Componente Products.js), El token es " + lsToken);
+        
+        setNavbarOpen(false) //para que cierre el SideBar en caso de que este abierto
+
         //Si tiene token Y es <> de 'undefined' ==>  hay usuario logueado
         if ((lsToken) && !(lsToken === 'undefined')) {
             // window.location.replace("/User");  //deberia usar el navigate para que no recargue la pagina en el navegador
@@ -138,8 +153,33 @@ const NavBar = () => {
         }
     }
 
+    //Evento Click sobre el Link Inicio
+    const onClickInicio = () => {
+        setNavbarOpen(false)
+    }
+
+    //Evento Click sobre el Link Historia (QuienesSomos)
+    const onClickHistoria = () => {
+        setNavbarOpen(false)
+    }
+    
+    //Evento Click sobre el Link Historia (QuienesSomos)
+    const onClickPedidos = () => {
+        setNavbarOpen(false)
+    }
+    //Evento Click sobre el Link Historia (QuienesSomos)
+    const onClickContacto = () => {
+        setNavbarOpen(false)
+    }
+    //Evento Click sobre el boton de 
+    const OnClickhandleToggle = () => {
+        setNavbarOpen(!navbarOpen)
+    }
+
     return (
         <div stye={{ marginTop:"0%", padding: "0px" }}>
+            {/* lo meto adentro del NavBar */}
+            {/* <SideBar/>   */}
             <header>
             <div className="encabezado">
                 <div className="logo">
@@ -147,30 +187,33 @@ const NavBar = () => {
                            {/* <img src={logo} className="App-logo" alt="logo" /> */}
                            <img className="ImagenLogo" src={logoKiwi} alt="LogoKiwi"/>    
                     </a>
-                    <div className="LogoOpacidad"></div>
+                    {/* <div className="LogoOpacidad"></div> */}
                 </div>
                 
                 <nav className="NavBar">
                     <ul className="ListaElementos">
                         <li className="ElementoNav">
-                            <a href="/home#Inicio" accessKey="i"><ins>I</ins>nicio</a>
+                            <a href="/home#Inicio" accessKey="i" onClick={onClickInicio}><ins>I</ins>nicio</a>
                             {/* No funciona xque no va a la seccion # */}
                             {/* <a onClick={onClickInicio}>Inicio</a> */}
                                 {/* redireccionar de esta manera hacer recargar la pagina */}
                                 {/* FALTAR AVIERGUAR SI ES ASI */}
                         </li>
                         <li className="ElementoNav">
-                            <a href="/home#QuienesSomos" accessKey="q" className="LiQuienesSomos"><ins>Q</ins></a>
+                            <a href="/home#QuienesSomos" onClick={onClickHistoria} accessKey="h" className="LiQuienesSomos"><ins>H</ins></a>
                         </li>
                         <li className="ElementoNav"> 
                             {/* <!-- <a href="#Productos" className="LiProdcutos">Prod</a> --> */}
                             <a onClick={() => onClickComprar()} accessKey="r" className="LiProdcutos">Comp<ins>r</ins>ar</a>
                         </li>
                         <li className="ElementoNav">
-                            <a href="/home#Pedidos" accessKey="p" className="liPedidos"><ins>P</ins>ed</a>
+                            <a href="/home#Pedidos" onClick={onClickPedidos} accessKey="p" className="liPedidos"><ins>P</ins>ed</a>
                         </li>
-                        <li className="ElementoNav"><a href="/home#Contacto" accessKey='c'><ins>C</ins>ontacto</a></li>
-                        <li className="ElementoNav" id="lblUsuario" onClick={() => onClickLblUsuario()}>{usMostrar}</li>
+                        <li className="ElementoNav">
+                            <a href="/home#Contacto" onClick={onClickContacto} accessKey='c'><ins>C</ins>ontacto</a>
+                        </li>
+                        <li className="ElementoNav" id="lblUsuario" onClick={() => onClickLblUsuario()}>{usMostrar}
+                        </li>
                         {/* <li className="ElementoNav" id="lblUsuario" onClick={onClickLblUsuario}>{usMostrar}</li> */}
                         {/* <li className="ElementoNav" id="lblUsuario" onClick={() => onClickLblUsuario()}>{localStorage.getItem('emailUsuario')}</li> */}
                         {/* <li className="ElementoNav" id="lblUsuario" font-size= "0.70em">{lsLblUsMostrar}</li> */}
@@ -181,8 +224,47 @@ const NavBar = () => {
                         {/* <li><button id="btnLogin" className="BtnLogin" onClick={onClickLoginLogout}> {btnLogInOut}</button></li>  */}
                         {/* <li><button id="btnLogin" className="BtnLogin" onClick={() => onClickLoginLogout()}> {lsLblBotonLogInOut}</button></li>  */}
                         <li><button id="btnLogin" className="BtnLogin" onClick={() => onClickLoginLogout()} accessKey="l" > {btnLogInOut}</button></li> 
-                        {/* onClick={() => navigate('/home')} */}
+
+                        <button className= "SB__sideBar_button" onClick={OnClickhandleToggle}>
+                            {/* {navbarOpen ? (
+                                <MdClose style={{ color: "#fff", width: "30px", height: "30px" }} />
+                            ) : (
+                                <FiMenu style={{ color: "#7b7b7b", width: "30px", height: "30px" }} />
+                            )} */}
+                            {navbarOpen ? (
+                                <MdClose style={{ color: "var(--fondoVerdeKiwi)" }} />
+                            ) : (
+                                <FiMenu style={{ color: "var(--fondoVerdeKiwi)" }} />
+                            )}
+                        </button>
                     </ul>
+
+                    <ul className={`SB__menuNav ${navbarOpen ? " SB__showMenu" : ""}`}>
+                        <li className="SB__ElementoNav">
+                            <a href="/home#Inicio" accessKey="i" onClick={onClickInicio}><ins>I</ins>nicio</a>
+                        </li>
+                        <li className="SB__ElementoNav">
+                            <a href="/home#QuienesSomos" onClick={onClickHistoria} accessKey="h" className="LiQuienesSomos"><ins>H</ins></a>
+                        </li>
+                        <li className="SB__ElementoNav"> 
+                            {/* <!-- <a href="#Productos" className="LiProdcutos">Prod</a> --> */}
+                            <a onClick={() => onClickComprar()} accessKey="r" className="LiProdcutos">Comp<ins>r</ins>ar</a>
+                        </li>
+                        <li className="SB__ElementoNav">
+                            <a href="/home#Pedidos" onClick={onClickPedidos} accessKey="p" className="liPedidos"><ins>P</ins>ed</a>
+                        </li>
+                         <li className="SB__ElementoNav">
+                            <a href="/home#Contacto" onClick={onClickContacto} accessKey='c'><ins>C</ins>ontacto</a>
+                        </li>
+                        <li className="SB__ElementoNav" id="lblUsuario" onClick={() => onClickLblUsuario()}>{usMostrar}
+                        </li>
+                        <li>
+                            <button id="btnLogin" className="BtnLogin" onClick={() => onClickLoginLogout()} accessKey="l" > {btnLogInOut}</button>
+                        </li> 
+                    </ul>
+
+                        {/* onClick={() => navigate('/home')} */}
+                   
                 </nav> 
             </div>
             {/* <div className="Portada" id="Inicio">
