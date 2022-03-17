@@ -1,5 +1,6 @@
 import imgLogin from '../../Imagenes/InicioSesion_Copia3.png';
 import './User.css';
+import './mediaQUser.css'
 
 import { useState, useEffect} from 'react';
 import { useNavigate } from "react-router-dom"

@@ -164,10 +164,13 @@
    } */
    .ElementoNav {
         /* font-size: 0.75rem; */
-        display:none
+        display:none  /*para que oculte los elementos de esa clase*/
+
     }    
     .ElementNavQuedan {
-        display:contents
+        display:contents;  /*para que muestre los elementos de esa clase*/
+        font-size: 0.85rem;
+
     }
      /* si uso el metodo de Franco no hace falta esto */
     /* .ElementoNav:hover{
@@ -187,6 +190,10 @@
     }
     .liPedidos::after{
         content: ".";
+    }
+    .SB__sideBar_button {
+        width: 29px; 
+        height: 29px
     }
 
  }
