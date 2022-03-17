@@ -32,7 +32,8 @@
 }
 
 /* para Tablets Ipads  van de 455 a 768px*/
-@media (min-width: 455px) and (max-width:1024px) {
+/* @media (min-width: 455px) and (max-width:1024px) { */
+@media (min-width: 700px) and (max-width:1024px) {
     .encabezado{
         height:42px;
     }
@@ -83,6 +84,58 @@
     }
 }
 
+@media (min-width: 454px) and (max-width:700px) {
+    .encabezado{
+        height:42px;
+    }
+    .header{
+        /* min-height: 55vh; */
+    }   
+    .logo{
+        height: 42px;
+        /* width: 20%; */
+    }
+    .ImagenLogo{
+        width: 42px; 
+        margin-left:50%
+    }
+   .ARefLogo{
+    width: 70px; 
+    /*2021-06-21: pruebo de meter el logo mas adentrol*/
+    /*margin-left: 10%;*/
+    margin-left:  20%;
+   }
+   .LiQuienesSomos::after {
+    content:"ist.";
+    }
+    .LiProdcutos::after {
+        content:"."
+    }
+    .liPedidos::after{
+        content: ".";
+    }
+    .ElementoNav {
+        display:none
+    }
+    .ElementNavQuedan {
+        display:contents
+    }
+    /* si uso el metodo de Franco no hace falta esto */   
+    /* .ElementoNav:hover{
+        font-size: 1.1rem;
+    } */
+    .BtnLogin{
+        width: 4.4rem;
+        height: 1.98rem;
+        font-size: 0.8rem;
+        padding: 1px 2px 1px 2px; 
+    }
+    .SB__sideBar_button {
+        width: 31px; 
+        height: 31px
+    }
+}
+
 /* Para moviles */
 @media (min-width: 0px) and (max-width:454px) {
    .encabezado{
@@ -110,8 +163,12 @@
        width: 0;
    } */
    .ElementoNav {
-        font-size: 0.75rem;
+        /* font-size: 0.75rem; */
+        display:none
     }    
+    .ElementNavQuedan {
+        display:contents
+    }
      /* si uso el metodo de Franco no hace falta esto */
     /* .ElementoNav:hover{
         font-size: 0.80em;

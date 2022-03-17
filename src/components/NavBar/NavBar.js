@@ -202,7 +202,7 @@ const NavBar = () => {
                         <li className="ElementoNav">
                             <a href="/home#QuienesSomos" onClick={onClickHistoria} accessKey="h" className="LiQuienesSomos"><ins>H</ins></a>
                         </li>
-                        <li className="ElementoNav"> 
+                        <li className="ElementoNav ElementNavQuedan"> 
                             {/* <!-- <a href="#Productos" className="LiProdcutos">Prod</a> --> */}
                             <a onClick={() => onClickComprar()} accessKey="r" className="LiProdcutos">Comp<ins>r</ins>ar</a>
                         </li>
@@ -212,7 +212,7 @@ const NavBar = () => {
                         <li className="ElementoNav">
                             <a href="/home#Contacto" onClick={onClickContacto} accessKey='c'><ins>C</ins>ontacto</a>
                         </li>
-                        <li className="ElementoNav" id="lblUsuario" onClick={() => onClickLblUsuario()}>{usMostrar}
+                        <li className="ElementoNav ElementNavQuedan" id="lblUsuario" onClick={() => onClickLblUsuario()}>{usMostrar}
                         </li>
                         {/* <li className="ElementoNav" id="lblUsuario" onClick={onClickLblUsuario}>{usMostrar}</li> */}
                         {/* <li className="ElementoNav" id="lblUsuario" onClick={() => onClickLblUsuario()}>{localStorage.getItem('emailUsuario')}</li> */}
@@ -239,6 +239,7 @@ const NavBar = () => {
                         </button>
                     </ul>
 
+                    {/* Esta parte es la SideBar */}
                     <ul className={`SB__menuNav ${navbarOpen ? " SB__showMenu" : ""}`}>
                         <li className="SB__ElementoNav">
                             <a href="/home#Inicio" accessKey="i" onClick={onClickInicio}><ins>I</ins>nicio</a>
@@ -261,10 +262,14 @@ const NavBar = () => {
                         <li>
                             <button id="btnLogin" className="BtnLogin" onClick={() => onClickLoginLogout()} accessKey="l" > {btnLogInOut}</button>
                         </li> 
+                        <li>
+                            <button className= "SB__sideBar_button" onClick={OnClickhandleToggle}>
+                                {(<MdClose style={{ color: "var(--fondoVerdeKiwi)" }} />)}
+                            </button>
+                        </li> 
                     </ul>
 
-                        {/* onClick={() => navigate('/home')} */}
-                   
+                                   
                 </nav> 
             </div>
             {/* <div className="Portada" id="Inicio">
