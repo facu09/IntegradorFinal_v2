@@ -29,6 +29,10 @@
         height: 1.98rem;
         font-size: 0.93rem;
     }
+    .SB__sideBar_button{
+        display:none
+    }
+
 }
 
 /* para Tablets Ipads  van de 455 a 768px*/
@@ -79,6 +83,7 @@
     }
 
     .SB__sideBar_button {
+        display:none;
         width: 31px; 
         height: 31px
     }
