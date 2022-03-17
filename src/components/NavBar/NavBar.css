@@ -173,32 +173,20 @@ ol, ul {
     /* margin-bottom: 0em; */
 }
 
-.BtnLogin{
+.BtnLogin {
     width: 5rem;
     height: 2rem;
     font-size: 1rem;
     border-radius: 40px;
     padding: 3px 10px 3px 10px; 
-     /* PRUEBA DE COLORES*/
-    /* color:rgb(70, 48, 33);   */
-    /* color:rgb(51, 36, 25);  */
     color: var(--color-letra-boton);
     border-color: var(--color-boton-border);
-    /* background-color: rgba(248, 255, 239, 0.5); */
-    /* background-color: rgb(134, 170, 115); */
     background-color: var(--color-boton);
 } 
-.BtnLogin:hover{
-    /* no queda lindo el agrandar el botón*/
-    /* height: 2.2rem;
-    font-size: 1.1rem; */
+.BtnLogin:hover {
     cursor: pointer;
-    /* background-color: rgb(169, 216, 144); */
-    /* background-color: rgb(77, 128, 49); */
     background-color: var(--color-boton-hover);
-    /* color:white; */
     color: var(--color-letra-boton-hover);
-    
 }
 
 .LiQuienesSomos::after {
@@ -326,9 +314,24 @@ ol, ul {
     /* margin-bottom: 0em; */
 }
 
-
 .SB__ElementoNav a{
     text-decoration: none; 
     color: inherit;
     margin-top: 2rem
+}
+
+.SB__BtnLogin {
+    width: 5rem;
+    height: 2rem;
+    font-size: 1rem;
+    border-radius: 40px;
+    padding: 3px 10px 3px 10px; 
+    color: var(--color-letra-boton);
+    border-color: var(--color-boton-border);
+    background-color: var(--color-boton);
+} 
+.SB__BtnLogin:hover {
+    cursor: pointer;
+    background-color: var(--color-boton-hover);
+    color: var(--color-letra-boton-hover);
 }

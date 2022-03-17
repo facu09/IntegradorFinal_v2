@@ -260,7 +260,7 @@ const NavBar = () => {
                         <li className="SB__ElementoNav" id="lblUsuario" onClick={() => onClickLblUsuario()}>{usMostrar}
                         </li>
                         <li>
-                            <button id="btnLogin" className="BtnLogin" onClick={() => onClickLoginLogout()} accessKey="l" > {btnLogInOut}</button>
+                            <button id="btnLogin" className="SB__BtnLogin " onClick={() => onClickLoginLogout()} accessKey="l" > {btnLogInOut}</button>
                         </li> 
                         <li>
                             <button className= "SB__sideBar_button" onClick={OnClickhandleToggle}>
