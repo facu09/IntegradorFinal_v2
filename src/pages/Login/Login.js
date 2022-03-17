@@ -81,8 +81,9 @@ const Login = () => {
             
     
             //Recupero el token como un string desestructurado
-            const { token } = await response.json();
-            
+           
+            const { token } = await response.json();  //el response.json() solo devuelve el token
+           
             console.log ("El token es === ", token);
             
             localStorage.setItem('token', token);

@@ -56,10 +56,10 @@
     margin-left:  20%;
    }
    .LiQuienesSomos::after {
-    content:"ist.";
+        content:"ist.";
     }
     .LiProdcutos::after {
-        content:"."
+        content:"";
     }
     .liPedidos::after{
         content: ".";
@@ -106,13 +106,13 @@
     margin-left:  20%;
    }
    .LiQuienesSomos::after {
-    content:"ist.";
+    content:"istoria";
     }
     .LiProdcutos::after {
-        content:"."
+        content:""
     }
     .liPedidos::after{
-        content: ".";
+        content: "idos";
     }
     .ElementoNav {
         display:none
@@ -183,13 +183,13 @@
         padding: 1px 2px 1px 2px; 
     }
     .LiQuienesSomos::after {
-        content:".";
+        content:"istoria";
     }
     .LiProdcutos::after {
-        content:"."
+        content:""
     }
     .liPedidos::after{
-        content: ".";
+        content: "idos";
     }
     .SB__sideBar_button {
         width: 29px; 
