@@ -295,7 +295,7 @@ ol, ul {
     /* color: rgba(183, 213, 212,0.7); */
     /* color: rgb(183, 213, 212); */
     color: rgb(89, 180, 40);  
-    font-size: 1rem; /*1.2rem*/  /*En React tengo que achicar la letra no se xq*/
+    font-size: 1.2rem; /*1.2rem*/  /*En React tengo que achicar la letra no se xq*/
     font-weight: bold;
     /* transition: all;
     transition-duration: 200ms;
