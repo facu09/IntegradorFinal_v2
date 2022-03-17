@@ -225,7 +225,7 @@ const NavBar = () => {
                         {/* <li><button id="btnLogin" className="BtnLogin" onClick={() => onClickLoginLogout()}> {lsLblBotonLogInOut}</button></li>  */}
                         <li><button id="btnLogin" className="BtnLogin" onClick={() => onClickLoginLogout()} accessKey="l" > {btnLogInOut}</button></li> 
 
-                        <button className= "SB__sideBar_button" onClick={OnClickhandleToggle}>
+                        <button className= "SideBar_button" onClick={OnClickhandleToggle}>
                             {/* {navbarOpen ? (
                                 <MdClose style={{ color: "#fff", width: "30px", height: "30px" }} />
                             ) : (
